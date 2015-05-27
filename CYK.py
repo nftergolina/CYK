@@ -1,16 +1,19 @@
 #CYK algorythm
 #Implemented by
+#Carolina Lange Mello - 
+#Gunter Hertz -
+#Lucas Bertolini Pizzo -
 #Natalia Felix Tergolina - 242241
 
 import string
 
-KEY_WORDS 	= ['Terminais', 'Variaveis', 'Inicial', 'Regras']
+KEY_WORDS 	= ['Terminais', 'Variaveis', 'initial', 'Regras']
 KEY_CHARS	= [',', ' ', '{']
 
 def get_grammar(f):
 	terminals = []
 	variables = []
-	inicial = ''
+	initial = ''
 	rules = {}
 	looking_for = ''
 	new_key_word = ''
@@ -57,13 +60,13 @@ def get_grammar(f):
 						aux = ''
 						break
 
-			#get inicial
-			if looking_for == 'Inicial':
+			#get initial
+			if looking_for == 'initial':
 				for char in line:
 					if char in string.ascii_letters:
 						aux += char
 					elif char == '}':
-						inicial = aux
+						initial = aux
 						aux = ''
 						break
 
@@ -71,7 +74,7 @@ def get_grammar(f):
 			if looking_for == 'Regras':
 				pass
 
-	return [terminals, variables, inicial, rules]
+	return [terminals, variables, initial, rules]
         
 
 def get_phrase():
@@ -85,6 +88,6 @@ def CYK():
 grammar = get_grammar(open('gramatica.txt'))
 terminals = grammar[0]
 variables = grammar[1]
-inicial = grammar[2]
+initial = grammar[2]
 
 print grammar
