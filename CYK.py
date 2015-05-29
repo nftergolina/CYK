@@ -72,7 +72,30 @@ def get_grammar(f):
 
 			#get rules
 			if looking_for == 'Regras':
-				pass
+				rules_switch = True
+				rules_left = ''
+				rules_right = ''
+				for char in line:
+					if rules_switch:
+						if char in string.ascii_letters:
+							rules_left += char
+						elif char == '>':
+							if rules_left not in rules:
+								rules[rules_left] = []
+							rules_switch = False
+					else:
+						if char in string.ascii_letters:
+							rules_right += char
+						elif char == ',' or char == '}':
+							if rules_right not in rules[rules_left]:
+								rules[rules_left].append(rules_right)
+							rules_right = ''
+							if char == '}':
+								rules_left = ''
+								break
+							
+						
+				
 
 	return [terminals, variables, initial, rules]
         
