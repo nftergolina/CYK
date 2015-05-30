@@ -5,6 +5,7 @@
 #Lucas Bertolini Pizzo -
 #Natalia Felix Tergolina - 242241
 
+import sys
 import string
 
 KEY_WORDS 	= ['Terminais', 'Variaveis', 'initial', 'Regras']
@@ -100,14 +101,12 @@ def get_grammar(f):
 	return [terminals, variables, initial, rules]
         
 
-def get_phrase():
-	pass
-
 def CYK():
 	pass
 
 
-
+sentence = raw_input('Type in a sentence: ')
+print sentence
 grammar = get_grammar(open('gramatica.txt'))
 terminals = grammar[0]
 variables = grammar[1]
