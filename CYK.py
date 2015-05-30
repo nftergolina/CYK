@@ -2,7 +2,7 @@
 #Implemented by
 #Carolina Lange Mello - 
 #Gunter Hertz -
-#Lucas Bertolini Pizzo -
+#Lucas Bertolini Pizzo - 220484
 #Natalia Felix Tergolina - 242241
 
 import sys
