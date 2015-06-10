@@ -5,6 +5,7 @@
 #Lucas Bertolini Pizzo - 220484
 #Natalia Felix Tergolina - 242241
 
+import nltk
 import sys
 import string
 
@@ -94,18 +95,35 @@ def get_grammar(f):
 							if char == '}':
 								rules_left = ''
 								break
-							
-						
-				
 
 	return [terminals, variables, initial, rules]
         
 
-def CYK():
-	pass
+'''
+def CYK(
+    a,  		# cadeia de caracteres [1 to n] a ser testada
+    R, 			# gramática [1 to r] contendo símbolos terminais e não-terminais
+    initial,    # símbolos de início da gramática
+    P			# vetor [n,n,r] de booleanos inicializado em Falso
+    ):
+    for char in a:
+        for Producao:R_j \to char:
+            P[i,1,j] = Verdadeiro
+    for i in xrange(2, n+1):
+        for j in xrange(1, n-i+2):
+            for k in xrange(1, i):
+                for Produção(R_A \to R_B R_C):
+                    if P[j,k,B] and P[j+k,i-k,C]:
+                        P[j,i,A] = Verdadeiro
+    for x in initial:
+        if P[1,n,x] = True:
+            return "membro da linguagem"
+        else
+            return "não-membro da linguagem"
+'''
 
 
-sentence = raw_input('Type in a sentence: ')
+sentence = nltk.word_tokenize(raw_input('Type in a sentence: '))
 print sentence
 grammar = get_grammar(open('gramatica.txt'))
 terminals = grammar[0]
